@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 // const db = require('./data/db');
 const logger = require('./middleware/logger');
+const verifyToken = require('./middleware/verifyToken');
 
 const { loginRoutes, postsRoutes } = require("./routes");
 
@@ -14,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.listen(process.env.PORT, ()=>{    
     console.log(`Server is running on port ${process.env.PORT}`)
-    app.use("/users",loginRoutes);
-    app.use("/posts",postsRoutes);
+    app.use("/login", loginRoutes);
+    app.use("/posts", verifyToken, postsRoutes);
 });
 
