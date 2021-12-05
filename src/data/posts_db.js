@@ -22,6 +22,18 @@ const posts = [
       "title": "post 4",
       "body": "post 4 body",
       "userId": 4
+    },
+    {
+      "id": 5,
+      "title": "post 5",
+      "body": "post 5 body",
+      "userId": 3
+    },
+    {
+      "id": 6,
+      "title": "post 5",
+      "body": "post 5 body",
+      "userId": 1
     }
   ]
 
