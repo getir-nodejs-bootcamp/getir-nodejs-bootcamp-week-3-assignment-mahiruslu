@@ -13,8 +13,8 @@ app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.listen(process.env.PORT, ()=>{    
-    console.log(`Server is running on port ${process.env.PORT}`)
+app.listen(process.env.APP_PORT || 5000  , ()=>{    
+    console.log(`Server is running on port ${process.env.APP_PORT}`)
     app.use("/login", loginRoutes);
     app.use("/posts", verifyToken, postsRoutes);
 });
